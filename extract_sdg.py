@@ -76,14 +76,3 @@ if __name__ == "__main__":
         metatopicDict[key] = text
 
     save2json('data/sdg.json', [metatopicDict])
-
-    # url = 'http://sustainabledevelopment.un.org/getWSDoc.php?id=2278'
-    # extractor = TextExtractor(url)
-    # extractor.getResponse()
-    # detectFormat(extractor)
-    # text = extractText(extractor)
-    # print text.encode("ascii", "ignore")
-
-    #extract text from each URL for each key
-    #concatenate the text for each key in sdgClusters
-    #save text in a json file

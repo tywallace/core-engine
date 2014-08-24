@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 File that defines links to extract text data
-for the initial set of SUMIT metatopics
+for the initial set of SUMIT metatopics from the
+official UN SDG open working groups
 """
 
 sdgClusters = {
@@ -87,7 +88,7 @@ sdgClusters = {
         'http://sustainabledevelopment.un.org/content/documents/2077Energy%20Brief_Final_20_Nov_edits.pdf',
         'http://sustainabledevelopment.un.org/getWSDoc.php?id=676',
     ],
-    'food security and sustainable agriculture': [
+    'sustainable agriculture': [
         'http://sustainabledevelopment.un.org/getWSDoc.php?id=3473',
         'http://sustainabledevelopment.un.org/getWSDoc.php?id=3408',
         'http://sustainabledevelopment.un.org/getWSDoc.php?id=3393',
@@ -221,7 +222,7 @@ sdgClusters = {
         'http://sustainabledevelopment.un.org/content/documents/1728tstissuespoverty.pdf',
     ],
     'promoting equality and social inclusion': [
-        'http://sustainabledevelopment.un.org/getWSDoc.php?id=5009'
+        'http://sustainabledevelopment.un.org/getWSDoc.php?id=5009',
         'http://sustainabledevelopment.un.org/getWSDoc.php?id=4937',
         'http://sustainabledevelopment.un.org/getWSDoc.php?id=3907',
         'http://sustainabledevelopment.un.org/getWSDoc.php?id=3388',
