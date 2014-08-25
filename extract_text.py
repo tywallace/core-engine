@@ -44,6 +44,13 @@ class TextExtractor(object):
         self.document = PdfFileReader(self.fp)
         return self
 
+    def minePdf(self, decode=True):
+        self.miner = Miner(self.content)
+        text = self.miner.extract_text()
+        self.text = ' '.join(text.split())
+        if decode is True:
+            self.text = self.text.decode('utf8').encode('ascii', 'ignore')
+
     def getDocxText(self):
         '''Return the raw text of a document as a list of paragraphs.'''
         paratextlist = []
@@ -101,11 +108,8 @@ if __name__ == "__main__":
     url = 'http://unsdsn.org/wp-content/uploads/2014/02/Health-For-All-Report.pdf'
     extractor = TextExtractor(url)
     pdf = extractor.getResponse().openPdfResponse()
-    miner = Miner(pdf.content)
-    text = miner.extract_text()
-    print text.split()[:100]
-    cleanText = ' '.join(text.split())
-    print cleanText.decode('utf8').encode('ascii', 'ignore')
+    pdf.minePdf()
+    print pdf.text
     # file(pdf.content, 'rb')
 
     #print extractor.text.encode('utf-8')

@@ -18,9 +18,10 @@ if __name__ == "__main__":
             print url
             extractor = TextExtractor(url)
             extractor.getResponse()
-            detectFormat(extractor)
+            pdf = extractor.getResponse().openPdfResponse()
+            pdf.minePdf()
             #extract text and append to dictionary
-            metatopicDict[key].append(extractText(extractor))
+            metatopicDict[key].append(pdf.text)
 
     for key in metatopicDict.keys():
         text = concatText(metatopicDict[key])
