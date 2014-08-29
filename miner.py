@@ -20,6 +20,7 @@ class Miner(object):
             self.rsrcmgr, self.retstr, codec=codec, laparams=self.laparams)
         self.interpreter = PDFPageInterpreter(self.rsrcmgr, self.device)
 
+
     def extract_text(self, password="",maxpages=0, caching=True, pagenos=set()):
         for page in PDFPage.get_pages(self.fp, pagenos,
                                       maxpages=maxpages,
@@ -27,6 +28,7 @@ class Miner(object):
                                       caching=caching,
                                       check_extractable=True):
             self.interpreter.process_page(page)
+
         self.fp.close()
         self.device.close()
         text = self.retstr.getvalue()
